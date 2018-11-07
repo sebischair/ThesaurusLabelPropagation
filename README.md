@@ -24,6 +24,6 @@ Via [purew2v_parameter_studies.py](src/baselines/purew2v_parameter_studies.py), 
 In `ipynbs`, we provided some exemplary Jupyter notebooks that were used to generate (a) statistics, (b) diagrams and (c) the Excel files for the manual evaluations. You can explore them by running `pipenv shell` and then starting Jupyter with `jupyter notebook`.
 
 ## Further notes
-- For GloVe embeddings to work, [GloVe](https://github.com/stanfordnlp/GloVe) needs to be installed and built manually. Then, the build path needs to be either specified in [base_config.py](base_config.py) or specified as a parameter when calling `main.py` or `multi_run.py`.
+- For GloVe embeddings to work, [GloVe](https://github.com/stanfordnlp/GloVe) needs to be installed and built manually. Then, the build path needs to be either specified in [base_config.py](src/base_config.py) or specified as a parameter when calling `main.py` or `multi_run.py`.
 - This tool was developed for use on Ubuntu 18.04.1 LTS (Bionic Beaver) and macOS 10.14 (Mojave)
 - In case you have any questions, feel free contact the authors or open an issue!
