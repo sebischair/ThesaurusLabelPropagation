@@ -14,7 +14,7 @@ The tool was implemented using the following pipes and filters architecture:
 
 ## How to run
 - **Input**: This tools expects a set of text corpus files in `data/RW40jsons`, and the thesaurus in `data/german_relat_pretty-20180605.json`. See [phase1.py](src/lib/phase1.py) and [phase4.py](src/lib/phase4.py) for information about the expected file formats.
-- **Start**: See [sample_commands.md](docs/sample_commands.md) for examples on how to run the pipeline with a set of hyper-parameters. The default hyper-parameter set is given in [base_config.py](base_config.py). The hyper-parameters can be overwritten when running a start script.
+- **Start**: See [sample_commands.md](docs/sample_commands.md) for examples on how to run the pipeline with a set of hyper-parameters. The default hyper-parameter set is given in [base_config.py](src/base_config.py). The hyper-parameters can be overwritten when running a start script.
 - **Output**: In a run, output of each individual phase is stored in `output/<PHASE_FOLDER>/<DATE>`. Most important are `08_propagation_evaluation` and `XX_runs`. In `08_propagation_evaluation`, the evaluation statistics are stored as `stats.json` together with a table that contains predictions, training and test set (`main.txt`, in the other scripts most often referred to as `df_evaluation`). In `XX_runs`, a run's log is stored. If multiple runs were triggered via [multi_runs.py](src/multi_runs.py) (each with a different training/test set), the combined statistics of all individual runs are stored as `all_stats.json` as well.
 
 ## Synset Vector Baseline
