@@ -1,10 +1,10 @@
 ## Doing a pipeline run
 #### Simplest possible pipeline run (using `main.py`)
-This is the simplest possible pipeline run. The default hyper-parameters from [base_config.py](../base_config.py) are used:
+This is the simplest possible pipeline run. The default hyper-parameters from [base_config.py](../src/base_config.py) are used:
 ```bash
 ./src/main.py -p <PROJECT_DIR>
 ```
-[main.py](../main.py) splits the thesaurus into training and test set, generates predictions via the training set, and evaluates the predictions on the test set. It stores the run's configuration and output in `output/XX_runs/<DATE>`.
+[main.py](../src/main.py) splits the thesaurus into training and test set, generates predictions via the training set, and evaluates the predictions on the test set. It stores the run's configuration and output in `output/XX_runs/<DATE>`.
 
 #### Optimized configuration with with multiple training/test splits (using `multi_run.py`)
 This command runs the optimized configuration from our thesis (with fastText embeddings):
@@ -22,7 +22,7 @@ This command runs the optimized configuration from our thesis (with fastText emb
 && ntfy send "Best runs attempt successful" \
 || ntfy send "Error"
 ```
-[multi_runs.py](../multi_runs.py) generates three different training/test splits of the thesaurus, and trains and evaluates on each of the splits (by calling `main.py` repeatedly) to prevent oferfitting on a specific split. All prediction statistics are stored in `output/XX_runs/multi_runs_<DATE>`, we each `main.py` result as a subfolder. The `main.py` evaluation results are combined into an `all_stats.json` file.
+[multi_runs.py](../src/multi_runs.py) generates three different training/test splits of the thesaurus, and trains and evaluates on each of the splits (by calling `main.py` repeatedly) to prevent oferfitting on a specific split. All prediction statistics are stored in `output/XX_runs/multi_runs_<DATE>`, we each `main.py` result as a subfolder. The `main.py` evaluation results are combined into an `all_stats.json` file.
 
 **Note**: Here, the Python package `ntfy` ([GitHub](https://github.com/dschep/ntfy)) is used to automatically notify the user via e.g. the Telegram messenger that the run was successful. It is not installed by default. 
 

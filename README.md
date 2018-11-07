@@ -6,7 +6,7 @@ This tool was developed during the Master's Thesis "[_Label Propagation for Tax 
 
 The tool was implemented using the following pipes and filters architecture:
 
-![Tool Architecture](src/docs/architecture.png)
+![Tool Architecture](docs/architecture.png)
 
 ## Pre-Requisites
 1. Install `pipenv` ([Installation Guide](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)).
@@ -14,11 +14,11 @@ The tool was implemented using the following pipes and filters architecture:
 
 ## How to run
 - **Input**: This tools expects a set of text corpus files in `data/RW40jsons`, and the thesaurus in `data/german_relat_pretty-20180605.json`. See [phase1.py](src/lib/phase1.py) and [phase4.py](src/lib/phase4.py) for information about the expected file formats.
-- **Start**: See [sample_commands.md](src/docs/sample_commands.md) for examples on how to run the pipeline with a set of hyper-parameters. The default hyper-parameter set is given in [base_config.py](base_config.py). The hyper-parameters can be overwritten when running a start script.
+- **Start**: See [sample_commands.md](docs/sample_commands.md) for examples on how to run the pipeline with a set of hyper-parameters. The default hyper-parameter set is given in [base_config.py](base_config.py). The hyper-parameters can be overwritten when running a start script.
 - **Output**: In a run, output of each individual phase is stored in `output/<PHASE_FOLDER>/<DATE>`. Most important are `08_propagation_evaluation` and `XX_runs`. In `08_propagation_evaluation`, the evaluation statistics are stored as `stats.json` together with a table that contains predictions, training and test set (`main.txt`, in the other scripts most often refered to as `df_evaluation`). In `XX_runs`, a run's log is stored. If multiple runs were triggered via [multi_runs.py](src/multi_runs.py) (each with a different training/test set), the combined statistics of all individual runs are stored as `all_stats.json` as well.
 
 ## Synset Vector Baseline
-Via [purew2v_parameter_studies.py](src/baselines/purew2v_parameter_studies.py), the synset vector baseline that we introduced in our thesis can be executed. It requires a set of word embeddings and one or multiple thesaurus training/test splits. See [sample_commands.md](src/docs/sample_commands.md) for an example.
+Via [purew2v_parameter_studies.py](src/baselines/purew2v_parameter_studies.py), the synset vector baseline that we introduced in our thesis can be executed. It requires a set of word embeddings and one or multiple thesaurus training/test splits. See [sample_commands.md](docs/sample_commands.md) for an example.
 
 ## Jupyter Notebooks
 In `ipynbs`, we provided some exemplary Jupyter notebooks that were used to generate (a) statistics, (b) diagrams and (c) the Excel files for the manual evaluations. You can explore them by running `pipenv shell` and then starting Jupyter with `jupyter notebook`.
