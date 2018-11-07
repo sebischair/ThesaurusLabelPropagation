@@ -1,4 +1,4 @@
-## Note 
+## Notes
 - Before running any of these commands, make sure you have activated this project's virtual environment by running `pipenv shell`!
 - `<PROJECT_DIR>` should be the project's absolute path (the path that is printed when executing `pwd` in the project directory).
 
