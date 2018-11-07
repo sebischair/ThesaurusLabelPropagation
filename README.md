@@ -4,7 +4,7 @@ This tool was developed during the Master's Thesis "[_Label Propagation for Tax 
 
 > **Thesis Abstract.** With the rise of digitalization, information retrieval has to cope with increasing amounts of digitized content. Legal content providers invest a lot of money for building domain- specific ontologies such as thesauri to retrieve a significantly increased number of relevant documents. Since 2002, many label propagation methods have been developed e.g. to identify groups of similar nodes in graphs. Label propagation is a family of graph-based semi-supervised machine learning algorithms. In this thesis, we will test the suitability of label propagation methods to extend a thesaurus from the tax law domain. The graph on which label propagation operates is a similarity graph constructed from word embeddings. We cover the process from end to end and conduct several parameter-studies to understand the impact of certain hyper-parameters on the overall performance. The results are then evaluated in manual studies and compared with a baseline approach.
 
-This tool was implemented using this pipes and filters architecture:
+The tool was implemented using the following pipes and filters architecture:
 
 ![Tool Architecture](src/docs/architecture.png)
 
